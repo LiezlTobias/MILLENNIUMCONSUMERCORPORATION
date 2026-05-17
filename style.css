@@ -3270,3 +3270,27 @@ body {
         transform: translateY(-9px) rotate(-45deg) !important;
     }
 }
+
+/* ===== MOBILE FIX ===== */
+@media (max-width:768px){
+
+.row{
+flex-direction:column;
+}
+
+nav{
+flex-direction:column;
+align-items:center;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+.container{
+width:100%;
+padding:15px;
+}
+
+}
