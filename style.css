@@ -3271,26 +3271,152 @@ body {
     }
 }
 
-/* ===== MOBILE FIX ===== */
+/* ============================================================
+   FINAL MOBILE ALIGNMENT FIX
+   (Does not affect desktop layout)
+   ============================================================ */
+
 @media (max-width:768px){
 
-.row{
-flex-direction:column;
+/* Prevent horizontal scrolling */
+body{
+overflow-x:hidden;
 }
 
-nav{
-flex-direction:column;
-align-items:center;
-}
-
+/* Images scale correctly */
 img{
 max-width:100%;
 height:auto;
 }
 
+/* Containers fit screen */
 .container{
 width:100%;
 padding:15px;
 }
 
+/* Navbar alignment */
+.nav_container{
+flex-direction:row !important;
+justify-content:space-between !important;
+align-items:center !important;
+padding:0 15px !important;
+height:auto !important;
 }
+
+/* Hide desktop navigation */
+.nav_group.left,
+.nav_group.right{
+display:none !important;
+}
+
+/* Show hamburger */
+.hamburger_menu{
+display:flex !important;
+}
+
+/* Logo resize */
+.nav_logo{
+position:static !important;
+transform:none !important;
+}
+
+.nav_logo img{
+height:55px !important;
+}
+
+/* Mobile drawer menu */
+.mobile_drawer{
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:rgba(20,20,20,0.98);
+flex-direction:column;
+overflow:hidden;
+max-height:0;
+transition:max-height .4s ease;
+}
+
+.mobile_drawer.show_menu{
+max-height:400px;
+}
+
+.mobile_nav_link{
+padding:15px 20px;
+font-size:1rem;
+}
+
+/* Slider fix */
+.slider_container{
+height:300px !important;
+}
+
+.slide{
+height:300px !important;
+}
+
+.slide img{
+height:300px !important;
+object-fit:cover;
+}
+
+/* Slider text adjustment */
+.slide_text{
+width:90% !important;
+left:50% !important;
+transform:translate(-50%,-50%) !important;
+text-align:center !important;
+padding:15px !important;
+}
+
+.slide_text h2{
+font-size:1.4rem !important;
+}
+
+.slide_text p{
+font-size:.9rem !important;
+}
+
+/* About section stacking */
+.about_container{
+flex-direction:column !important;
+text-align:center;
+gap:20px;
+}
+
+/* Products horizontal scroll */
+.product_grid{
+overflow-x:auto;
+flex-wrap:nowrap !important;
+gap:15px;
+}
+
+.product_card{
+flex:0 0 240px;
+}
+
+/* Partner cards scroll */
+.partners_grid{
+overflow-x:auto !important;
+gap:15px !important;
+}
+
+.partners_grid .partner_card{
+flex:0 0 240px !important;
+}
+
+/* Contact section */
+.contact_container{
+flex-direction:column !important;
+gap:30px !important;
+}
+
+/* Footer stack */
+.footer_container{
+flex-direction:column !important;
+text-align:center;
+gap:25px;
+}
+
+.footer
