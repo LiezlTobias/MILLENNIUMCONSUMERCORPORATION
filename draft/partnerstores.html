@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Stores - Millennium Consumer Corporation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <!-- Header/Nav remains the same as your other pages -->
+     <header class="header">
+    <nav class="nav_container">
+        <!-- Kaliwang grupo ng buttons -->
+        <div class="nav_group left">
+            <a href="index.html" class="nav_link">HOME</a>
+            <a href="about.html" class="nav_link">ABOUT US</a>
+            <a href="products.html" class="nav_link">PRODUCT</a>
+        </div>
+
+        <!-- Logo sa gitna -->
+        <div class="nav_logo">
+            <a href="index.html">
+            <img src="logo.png" alt="Millennium Logo">
+            </a>
+        </div>
+
+        <!-- Kanang grupo ng buttons -->
+        <div class="nav_group right">
+            <a href="reseller.html" class="nav_link">RESELLER</a>
+            <a href="partnerstores.html" class="nav_link active">PARTNER STORES</a>
+            <a href="contact.html" class="nav_link">CONTACT</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="partner_hero">
+        <h1>PARTNER STORES</h1>
+    </section>
+
+    <!-- =======================
+     FIND A PARTNER STORE SECTION
+     ======================= -->
+<section class="store_locator">
+  <h2 class="section_title">Find a Partner Store Near You</h2>
+  <p class="map_subtitle">Search your city or zoom in to explore our partner locations.</p>
+
+  <!-- MAP CONTAINER -->
+  <div id="map" style="height: 500px; width: 100%; border-radius: 10px; margin-top: 20px;"></div>
+</section>
+
+<!-- =======================
+     GOOGLE MAPS SCRIPT
+     ======================= -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfNw85yEVZj7PnxEQvs03ZURX1IWVlO1A&libraries=places&callback=initMap"
+  async
+  defer
+></script>
+
+<script>
+  function initMap() {
+    const center = { lat: 14.5995, lng: 120.9842 }; // Manila as default center
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 6.5,
+      center: center,
+      mapTypeControl: false,
+      streetViewControl: false,
+    });
+
+    // Sample store markers
+    const stores = [
+      { name: "Dali Everyday Grocery", position: { lat: 14.52, lng: 121.01 } },
+      { name: "Puregold Supermarket", position: { lat: 14.55, lng: 121.03 } },
+      { name: "Super 8 Grocery", position: { lat: 14.68, lng: 121.05 } },
+      { name: "SM Hypermarket Davao", position: { lat: 7.07, lng: 125.61 } },
+      { name: "Metro Supermarket Cebu", position: { lat: 10.31, lng: 123.89 } }
+    ];
+
+    const infoWindow = new google.maps.InfoWindow();
+
+    stores.forEach((store) => {
+      const marker = new google.maps.Marker({
+        position: store.position,
+        map,
+        title: store.name,
+      });
+
+      marker.addListener("click", () => {
+        infoWindow.setContent(`<strong>${store.name}</strong>`);
+        infoWindow.open(map, marker);
+      });
+    });
+
+    // Search feature
+    const input = document.getElementById("map-search");
+    const searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
+
+    map.addListener("bounds_changed", () => {
+      searchBox.setBounds(map.getBounds());
+    });
+
+    searchBox.addListener("places_changed", () => {
+      const places = searchBox.getPlaces();
+      if (places.length === 0) return;
+      const bounds = new google.maps.LatLngBounds();
+
+      places.forEach((place) => {
+        if (!place.geometry || !place.geometry.location) return;
+        map.setCenter(place.geometry.location);
+        map.setZoom(12);
+        bounds.extend(place.geometry.location);
+      });
+
+      map.fitBounds(bounds);
+    });
+  }
+
+  window.initMap = initMap;
+</script>
+
+<style>
+  .store_locator {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff8ef;
+    border-top: 5px solid #ff0000;
+  }
+
+  .store_locator h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #222;
+    margin-bottom: 10px;
+  }
+
+  .map_subtitle {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .map_controls {
+    margin-bottom: 10px;
+  }
+
+  #map-search {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #ff0000;
+    border-radius: 8px;
+    outline: none;
+  }
+
+  #map-search:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+  }
+</style>
+
+    <section class="stores_grid_section">
+        <div class="stores_container">
+            
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/dali-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Dali Everyday Grocery</h3>
+                </div>
+                <p class="branches">Branches: stores across Metro Manila, Laguna, Pampanga, and Davao. Specific locations include Sun Valley, Nia Road-Imus, Trece Indang, Angeles City (Sta. Teresita, Malabañas), and various Makati and Cebu branches. </p>
+                <a href="https://www.dali.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/phil-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Philippine Seven</h3>
+                </div>
+                <p class="branches">Branches: Pasig, Batangas, Pampanga, Launion, IloIlo, Cdo, Davao, Cebu, etc </p>
+                <a href="https://www.7-eleven.com.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/ever-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Ever Supermarket</h3>
+                </div>
+                <p class="branches">Branches: Bulacan, Caloocan, Quezon City, Cavite, Makati, Malabon, Valenzuela, Manila, Marikina, Navotas, Paranaque, Pasig, Pateros, Rizal</p>
+                <a href="https://www.ever.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/ultra-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Ultramega Wholesale & Retail Mart</h3>
+                </div>
+                <p class="branches">Branches: Manila, Bagong Bario, General Trias, Lemery, Canlubang 1, Guagua, Antipolo, Rosario, Padre Garcia, Tanauan, Tanay, Taguig, Gagalangin, Sangandaan, Muntinlupa, Balagtas, Baliuag, Tagaytay, Arayat, Novaliches, Sapang Palay, Naic, Dasmarinas, Depadro, Candaba, Balibago etc..</p>
+                <a href="https://www.ultramega.com.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/puregold-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Puregold Supermarket</h3>
+                </div>
+                <p class="branches">Branches: Shaw, Tayuman, Valenzuela, Binan, Makati, Agora, Subic, San Pablo, Sta Mesa, Cainta, Calamba, Baguio, Tanza, Taguig, La Union, Cogeo, Pagsanjan, Lipa, Angono, Naga, Butuan, Digos, Lanang, Tagaytay, etc.</p>
+                <a href="https://www.puregold.com.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/lcc-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>LCC</h3>
+                </div>
+                <p class="branches">Branches: Legaspi, Naga, Cam Sur, Albay, Sorsogon, Masbate</p>
+                <a href="https://www.lcc.com.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/pioneer-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Pioneer Centre</h3>
+                </div>
+                <p class="branches">Branches: Pasig, etc.</p>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/landmark-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Land Mark</h3>
+                </div>
+                <p class="branches">Branches: Alabang, Makati, Trinoma, Manila Bay etc.</p>
+                <a href="https://www.landmark.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/imart-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Imart Shopping Center</h3>
+                </div>
+                <p class="branches">Branches: Sta Maria, Bacoor, Silang.</p>
+                <a href="https://www.facebook.com/imartshoppingcenter" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/emilus-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Emilu's Mart</h3>
+                </div>
+                <p class="branches">Branches: Bacoor, Tanza, Silang Cavite etc. </p>
+                <a href="https://www.facebook.com/emilusmrt" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/prince-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Prince Retail</h3>
+                </div>
+                <p class="branches">Branches: Buenavista, Ozamis, Bacolod etc..</p>
+                <a href="https://www.princeretail.com" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/super8-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Super 8 Grocery</h3>
+                </div>
+                <p class="branches">Branches: Manila, Laguna, Bulacan etc..</p>
+                <a href="https://www.super8.ph" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/walter-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Waltermart Supermarket</h3>
+                </div>
+                <p class="branches">Branches: Arayat, Paniqui, Cabanatuan, Gapan, Sta Maria, Balanga, San Jose, Malolos, Mabalacat, San Fernando, Baliwag, Guiguinto, Talavera, Makiling, San Pascual, Sta Rosa, Cabuyao, QC Erod, Balayan, North Edsa, Makati, Nasugbo, Sta Cruz, Silang, Sucat, Srbelair, Imus, Los Banos, Trece, Naic, Tanauan, Dasmarinas, Candelaria, Bacoor, Caloocan etc..</p>
+                <a href="https://www.waltermart.com" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/metro-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>Metro Supermarket</h3>
+                </div>
+                <p class="branches">Branches: Cebu, Legazpi, Taguig, Muntinlupa, Cavite, Mandaluyong, Manila etc..</p>
+                <a href="https://www.shopmetro.ph" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/sm snack-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>SM Snack Exchange</h3>
+                </div>
+                <p class="branches">Branches: SM Mall of Asia, Megamall, North EDSA, Makati, Fairview, Bicutan, Bacoor, Clark, Baguio, Cebu, Southmall, and various provincial locations.</p>
+                <a href="https://www.facebook.com/snacksatsmstore/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/savemore-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>SM Savemore</h3>
+                </div>
+                <p class="branches">Branches: Savemore Malabon, SMDC Air Mall, SMDC Fame Mall, SMDC Green Mall, SMDC Light Mall, SMDC Mplace Mall, SMDC Strip at Berkeley, SMDC Strip at Mezza, Nagtahan, Pasong Tamo, and Sta. Cruz Manila. and various provincial locations.</p>
+                <a href="https://smmarkets.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+            <!-- Store Item -->
+            <div class="store_item">
+                <div class="store_title">
+                    <img src="logo/sm-hyper-logo.png" alt="Ever Supermarket" class="partner_logo">
+                    <h3>SM Hypermarket</h3>
+                </div>
+                <p class="branches">Branches: SM Mall of Asia, SM North EDSA, Fairview, Sucat, Pasig, and various provincial locations and various provincial locations.</p>
+                <a href="https://smmarkets.ph/" target="_blank" class="slide_btn">Visit website</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="footer_section">
+    <div class="footer_container">
+        <!-- Column 1: Logo -->
+        <div class="footer_column logo_col">
+            <img src="logo.png" alt="Millennium Logo" class="footer_logo">
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer_column">
+            <h4>Quick Links</h4>
+            <div class="links_grid">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                </ul>
+                <ul>
+                    <li><a href="partnerstores.html">Store Location</a></li>
+                    <li><a href="reseller.html">Reseller</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Column 3: Address -->
+        <div class="footer_column">
+            <h4>Address</h4>
+            <p>3308 Robinsons Equitable Tower ADB Ave,<br>
+               Metro Manila, Philippines 1440</p>
+        </div>
+
+        <!-- Column 4: Contacts -->
+        <div class="footer_column">
+            <h4>Contacts</h4>
+            <p>Phone: 8 4555-3644</p>
+            <p>Fax: +63 (2) 8765-4321</p>
+            <p>Email: sales@millenniumconsumer.com.ph</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer_content">
+            <p>&copy; 2026 Millennium Consumer Corporation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

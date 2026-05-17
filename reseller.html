@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Become a Reseller</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="[unicons.iconscout.com](https://unicons.iconscout.com/release/v4.0.0/css/line.css)" />
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <nav class="nav_container">
+        
+        <div class="hamburger_menu" id="hamburgerMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav_group left">
+            <a href="index.html" class="nav_link">HOME</a>
+            <a href="about.html" class="nav_link">ABOUT US</a>
+            <a href="products.html" class="nav_link">PRODUCT</a> </div>
+
+        <div class="nav_logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Millennium Logo">
+            </a>
+        </div>
+
+        <div class="nav_group right">
+            <a href="reseller.html" class="nav_link active">RESELLER</a>
+            <a href="partnerstores.html" class="nav_link">PARTNER STORES</a>
+            <a href="contact.html" class="nav_link">CONTACT</a>
+        </div>
+
+    </nav>
+
+    <div class="mobile_drawer" id="mobileDrawer">
+        <a href="index.html" class="mobile_nav_link">HOME</a>
+        <a href="about.html" class="mobile_nav_link">ABOUT US</a>
+        <a href="products.html" class="mobile_nav_link">PRODUCT</a>
+        <a href="reseller.html" class="mobile_nav_link active">RESELLER</a>
+        <a href="partnerstores.html" class="mobile_nav_link">PARTNER STORES</a>
+        <a href="contact.html" class="mobile_nav_link">CONTACT</a>
+    </div>
+</header>
+
+  <!-- ================= PARTNERS SECTION ================= -->
+  <section class="partners">
+    <h2 class="section_title">OUR PARTNERS</h2>
+
+    <div class="partners_container">
+      <div class="partners_grid" id="productGrid">
+        <div class="partner_card">
+          <div class="partner_logo"><img src="img/m&t.jpg" /></div>
+          <div class="partner_info">
+            <h3>M&T FOOD INDUSTRIES</h3>
+            <p>Dedicated Partner</p>
+          </div>
+        </div>
+
+        <div class="partner_card">
+          <div class="partner_logo"><img src="img/dali.jpg" /></div>
+          <div class="partner_info">
+            <h3>Dali Everyday Grocery</h3>
+            <p>Authorized Partner</p>
+          </div>
+        </div>
+
+        <div class="partner_card">
+          <div class="partner_logo"><img src="img/super8.jpg" /></div>
+          <div class="partner_info">
+            <h3>Super 8 Grocery</h3>
+            <p>Authorized Partner</p>
+          </div>
+        </div>
+
+        <div class="partner_card">
+          <div class="partner_logo"><img src="img/pm.jpg" /></div>
+          <div class="partner_info">
+            <h3>Premium Mix</h3>
+            <p>Brand</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider_nav">
+        <button id="prevBtn" class="nav_btn"><i class="bx bx-chevron-left"></i></button>
+        <button id="nextBtn" class="nav_btn"><i class="bx bx-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARTNERSHIP BENEFITS SECTION ================= -->
+  <section class="partnership_intro">
+    <div class="container">
+      <h2 class="intro_title">BECOME OUR PARTNER</h2>
+      <ul class="benefit_list">
+        <li>Do you want to distribute high-quality Filipino snacks?</li>
+        <li>Are you looking for a long-term business partnership?</li>
+        <li>Can you support our growth in your local area?</li>
+        <li>Are you ready to work hard to maximize sales in your territory?</li>
+        <li>Do you value 100% fulfillment and consistent quality?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT BANNER ================= -->
+  <section class="contact_banner_section">
+    <div class="banner_container">
+      <div class="banner_left">
+        <p>Then we want to hear from you. Contact us today!</p>
+        <h2 class="banner_email">sales@millenniumconsumer.com.ph</h2>
+      </div>
+      <div class="banner_right">
+        <button id="openFormBtn" class="btn-fillup">FILL UP</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESELLER MODAL ================= -->
+  <div id="resellerModal" class="modal" style="display:none;">
+    <div class="modal_content">
+      <span class="close_modal">&times;</span>
+
+      <div class="reseller_header">
+        <h2>Reseller & Distributor Intent</h2>
+        <p>Please complete this form to become a partner. Your information is secure.</p>
+      </div>
+
+      <form id="resellerForm" class="resellerForm">
+        <div class="form_group">
+          <label>Email Address *</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form_row">
+          <div class="form_group">
+            <label>Full Name *</label>
+            <input type="text" id="fullname" required>
+          </div>
+          <div class="form_group">
+            <label>Phone / Mobile No *</label>
+            <input type="text" id="phone" required>
+          </div>
+        </div>
+
+        <div class="form_group">
+          <label>Area of Coverage *</label>
+          <input type="text" id="area" required>
+        </div>
+
+        <div class="form_group">
+          <label>Company Name (if available)</label>
+          <input type="text" id="company" placeholder="Business Name" />
+        </div>
+
+        <div class="form_group">
+          <label>Would you like to be a reseller or distributor? *</label>
+          <div class="type_options">
+            <label class="option_card">
+              <input type="radio" name="type" value="Reseller" required />
+              <div class="option_info">
+                <strong>Reseller</strong>
+                <span>Monthly order of ₱1,000 via Lazada/Shopee</span>
+              </div>
+            </label>
+            <label class="option_card">
+              <input type="radio" name="type" value="Distributor" />
+              <div class="option_info">
+                <strong>Distributor</strong>
+                <span>Minimum order of ₱70,000 within a specific location</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form_group">
+          <label>Why would you like to resell or distribute our products?</label>
+          <textarea id="motivation" rows="4" placeholder="Tell us your motivation..."></textarea>
+        </div>
+
+        <div class="form_group file_upload">
+          <label>For distributors: Company Profile & Business Permit</label>
+          <p>Supported: PDF, Doc, or Images (Max 5 files, 10 MB each)</p>
+          <input type="file" multiple />
+        </div>
+
+        <div class="form_footer_box">
+          <label class="checkbox_container">
+            <input type="checkbox" required />
+            I hereby certify that the above information is true and correct.
+          </label>
+          <div class="date_input">
+            <label>Date:</label>
+            <input type="date" id="submitDate" required />
+          </div>
+        </div>
+
+        <button type="submit" class="submit_btn_blue">SUBMIT INTENT</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer_section">
+    <div class="footer_container">
+      <div class="footer_column logo_col">
+        <img src="logo.png" class="footer_logo" />
+      </div>
+      <div class="footer_column">
+        <h4>Quick Links</h4>
+        <div class="links_grid">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+          </ul>
+          <ul>
+            <li><a href="partnerstores.html">Store Location</a></li>
+            <li><a href="reseller.html">Reseller</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_column">
+        <h4>Address</h4>
+        <p>3308 Robinsons Equitable Tower ADB Ave,<br>
+               Metro Manila, Philippines 1440</p>
+      </div>
+      <div class="footer_column">
+        <h4>Contacts</h4>
+        <p>Phone: 8 4555‑3644</p>
+        <p>Fax: +63 (2) 8765‑4321</p>
+        <p>Email: sales@millenniumconsumer.com.ph</p>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer_content">
+        <p>&copy; 2026 Millennium Consumer Corporation. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script src="script.js"></script>
+
+<div id="successModal" class="modal">
+    <div class="modal_content success_modal_content">
+        <div class="success_icon">
+            <i class="uil uil-check-circle"></i>
+        </div>
+        <h2>Submission Successful!</h2>
+        <p>Thank you for your interest in becoming a partner. Our team will review your application and contact you soon.</p>
+        <button id="closeSuccessBtn" class="submit_btn_blue">BACK TO HOME</button>
+    </div>
+</div>
+
+</body>
+</html>
