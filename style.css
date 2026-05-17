@@ -583,9 +583,6 @@ button[data-filter="all"].active {
     cursor: pointer;
 }
 
-
-
-
 .section {
     /* Binawasan ang top padding para hindi masyadong malayo sa header */
     padding-top: 10px !important; /* Halos idikit na natin ang title */
@@ -624,6 +621,10 @@ button[data-filter="all"].active {
 .products .section_title {
     margin-top: 0 !important;
     margin-bottom: 30px;
+}
+
+.product_container p {
+    text-align: center;
 }
 
 .product_grid {
@@ -3271,152 +3272,177 @@ body {
     }
 }
 
-/* ============================================================
-   FINAL MOBILE ALIGNMENT FIX
-   (Does not affect desktop layout)
-   ============================================================ */
+/* =========================================================
+   MOBILE RESPONSIVE FIX
+   ========================================================= */
+@media screen and (max-width: 768px) {
 
-@media (max-width:768px){
+    body{
+        padding-top: 80px !important;
+        overflow-x: hidden;
+    }
 
-/* Prevent horizontal scrolling */
-body{
-overflow-x:hidden;
+    /* ================= NAVIGATION ================= */
+
+    .nav_container{
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .nav_group{
+        display: none;
+    }
+
+    .nav_logo img{
+        height: 60px;
+        margin: 0;
+    }
+
+    .hamburger_menu{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .hamburger_menu span{
+        width: 25px;
+        height: 3px;
+        background: #000;
+        border-radius: 5px;
+    }
+
+    .mobile_drawer{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        transition: 0.3s ease;
+        z-index: 1500;
+    }
+
+    .mobile_drawer.show{
+        left: 0;
+    }
+
+    .mobile_nav_link{
+        padding: 15px 0;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* ================= SLIDER ================= */
+
+    .slider_container{
+        height: auto;
+    }
+
+    .slide img,
+    .mySlides img{
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .slide_text{
+        width: 90%;
+        left: 5%;
+        padding: 20px;
+    }
+
+    .slide_text h2{
+        font-size: 1.5rem;
+    }
+
+    .slide_text p{
+        font-size: 0.9rem;
+    }
+
+    .slide_btn{
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    /* ================= TITLES ================= */
+
+    .main_title,
+    .section_title,
+    .products-title{
+        font-size: 2rem !important;
+    }
+
+    .preview_text,
+    .inspiring_text{
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* ================= HERITAGE ================= */
+
+    .heritage_grid{
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .heritage_img{
+        height: auto;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .product-header{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .product-grid{
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .product-card{
+        min-width: 220px;
+    }
+
+    .image-wrapper{
+        height: 220px;
+    }
+
+    .product-info h3{
+        font-size: 1rem;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about_container{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about_content h2{
+        font-size: 2rem;
+    }
+
+    /* ================= EVOLUTION ================= */
+
+    .evolution_section .container,
+    .lifestyle_section .container{
+        flex-direction: column;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer_container{
+        flex-direction: column;
+        text-align: center;
+    }
+
 }
-
-/* Images scale correctly */
-img{
-max-width:100%;
-height:auto;
-}
-
-/* Containers fit screen */
-.container{
-width:100%;
-padding:15px;
-}
-
-/* Navbar alignment */
-.nav_container{
-flex-direction:row !important;
-justify-content:space-between !important;
-align-items:center !important;
-padding:0 15px !important;
-height:auto !important;
-}
-
-/* Hide desktop navigation */
-.nav_group.left,
-.nav_group.right{
-display:none !important;
-}
-
-/* Show hamburger */
-.hamburger_menu{
-display:flex !important;
-}
-
-/* Logo resize */
-.nav_logo{
-position:static !important;
-transform:none !important;
-}
-
-.nav_logo img{
-height:55px !important;
-}
-
-/* Mobile drawer menu */
-.mobile_drawer{
-position:absolute;
-top:80px;
-left:0;
-width:100%;
-background:rgba(20,20,20,0.98);
-flex-direction:column;
-overflow:hidden;
-max-height:0;
-transition:max-height .4s ease;
-}
-
-.mobile_drawer.show_menu{
-max-height:400px;
-}
-
-.mobile_nav_link{
-padding:15px 20px;
-font-size:1rem;
-}
-
-/* Slider fix */
-.slider_container{
-height:300px !important;
-}
-
-.slide{
-height:300px !important;
-}
-
-.slide img{
-height:300px !important;
-object-fit:cover;
-}
-
-/* Slider text adjustment */
-.slide_text{
-width:90% !important;
-left:50% !important;
-transform:translate(-50%,-50%) !important;
-text-align:center !important;
-padding:15px !important;
-}
-
-.slide_text h2{
-font-size:1.4rem !important;
-}
-
-.slide_text p{
-font-size:.9rem !important;
-}
-
-/* About section stacking */
-.about_container{
-flex-direction:column !important;
-text-align:center;
-gap:20px;
-}
-
-/* Products horizontal scroll */
-.product_grid{
-overflow-x:auto;
-flex-wrap:nowrap !important;
-gap:15px;
-}
-
-.product_card{
-flex:0 0 240px;
-}
-
-/* Partner cards scroll */
-.partners_grid{
-overflow-x:auto !important;
-gap:15px !important;
-}
-
-.partners_grid .partner_card{
-flex:0 0 240px !important;
-}
-
-/* Contact section */
-.contact_container{
-flex-direction:column !important;
-gap:30px !important;
-}
-
-/* Footer stack */
-.footer_container{
-flex-direction:column !important;
-text-align:center;
-gap:25px;
-}
-
-.footer
