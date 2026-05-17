@@ -1006,12 +1006,25 @@ button[data-filter="all"].active {
 }
 
 /* Responsive adjustment para sa mobile */
-@media screen and (max-width: 768px) {
-    .mini_logo {
-        height: 70px; /* Bahagyang liliit sa mobile para hindi mag-overlap */
+@media (max-width: 768px) {
+    /* Palitan ang .nav-links kung ano man ang class ng container ng mga links mo */
+    .nav-links {
+        display: flex !important; /* Piliting lumabas ang menu */
+        flex-direction: row;      /* Gawing pahiga ang pormasyon parang sa desktop */
+        justify-content: center;  /* Igitna ang mga links kung kailangan */
+        gap: 15px;                /* Lagyan ng kaunting puwang ang bawat link */
+        
+        /* Siguraduhing tanggalin ang mga lumang mobile styles na nagpapatong-patong */
+        position: static; 
+        background: transparent;
+        width: auto;
+        height: auto;
     }
-    .preview_logos {
-        gap: 20px; /* Mas maliit na gap sa mobile */
+
+    /* Opsyonal: Liitan ang font size ng mga links para magkasya sa mobile screen */
+    .nav-links a {
+        font-size: 14px; 
+        padding: 5px 10px;
     }
 }
 
