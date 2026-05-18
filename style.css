@@ -3263,11 +3263,55 @@ body {
     .nav_group{
         display: none;
     }
+<<<<<<< HEAD
+=======
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE FIX
+   ========================================================= */
+@media screen and (max-width: 768px) {
+
+    body{
+        padding-top: 80px !important;
+        overflow-x: hidden;
+    }
+
+    /* ================= NAVIGATION ================= */
+
+    .nav_container{
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .nav_group{
+        display: none;
+    }
+>>>>>>> 9ca558635111dca85828ad4527c74436c9eaf15c
 
     .nav_logo img{
         height: 60px;
         margin: 0;
+<<<<<<< HEAD
     } 
+=======
+    }
+
+    .hamburger_menu{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .hamburger_menu span{
+        width: 25px;
+        height: 3px;
+        background: #000;
+        border-radius: 5px;
+    }
+>>>>>>> 9ca558635111dca85828ad4527c74436c9eaf15c
 
     .mobile_drawer{
         position: fixed;
@@ -3401,4 +3445,8 @@ body {
         text-align: center;
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9ca558635111dca85828ad4527c74436c9eaf15c
