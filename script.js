@@ -387,3 +387,14 @@ if (resellerForm) {
     });
 }
 
+/* MOBILE MENU TOGGLE */
+const hamburger = document.getElementById("hamburgerMenu");
+const mobileDrawer = document.getElementById("mobileDrawer");
+
+if(hamburger && mobileDrawer){
+
+    hamburger.addEventListener("click", () => {
+        mobileDrawer.classList.toggle("show");
+    });
+
+}

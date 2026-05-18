@@ -583,9 +583,6 @@ button[data-filter="all"].active {
     cursor: pointer;
 }
 
-
-
-
 .section {
     /* Binawasan ang top padding para hindi masyadong malayo sa header */
     padding-top: 10px !important; /* Halos idikit na natin ang title */
@@ -624,6 +621,10 @@ button[data-filter="all"].active {
 .products .section_title {
     margin-top: 0 !important;
     margin-bottom: 30px;
+}
+
+.product_container p {
+    text-align: center;
 }
 
 .product_grid {
@@ -1005,12 +1006,25 @@ button[data-filter="all"].active {
 }
 
 /* Responsive adjustment para sa mobile */
-@media screen and (max-width: 768px) {
-    .mini_logo {
-        height: 70px; /* Bahagyang liliit sa mobile para hindi mag-overlap */
+@media (max-width: 768px) {
+    /* Palitan ang .nav-links kung ano man ang class ng container ng mga links mo */
+    .nav-links {
+        display: flex !important; /* Piliting lumabas ang menu */
+        flex-direction: row;      /* Gawing pahiga ang pormasyon parang sa desktop */
+        justify-content: center;  /* Igitna ang mga links kung kailangan */
+        gap: 15px;                /* Lagyan ng kaunting puwang ang bawat link */
+        
+        /* Siguraduhing tanggalin ang mga lumang mobile styles na nagpapatong-patong */
+        position: static; 
+        background: transparent;
+        width: auto;
+        height: auto;
     }
-    .preview_logos {
-        gap: 20px; /* Mas maliit na gap sa mobile */
+
+    /* Opsyonal: Liitan ang font size ng mga links para magkasya sa mobile screen */
+    .nav-links a {
+        font-size: 14px; 
+        padding: 5px 10px;
     }
 }
 
@@ -3161,42 +3175,11 @@ body {
     transition: all 0.3s ease !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
 }
-/* ============================================================
-   RESPONSIVE HAMBURGER NAVIGATION (MOBILE & TABLET VIEW)
-   ============================================================ */
-
-/* Itinatago ang hamburger trigger sa desktop view */
-.hamburger_menu {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.hamburger_menu span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: #ffffff; /* Puting guhit para litaw sa kulay ng header niyo */
-    border-radius: 3px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Itinatago ang mobile drawer overlay sa desktop screen */
-.mobile_drawer {
-    display: none;
-}
 
 /* START OF SCREEN BREAKPOINT FOR MOBILE/TABLETS */
 @media (max-width: 992px) {
     /* Pinapakita ang hamburger button trigger */
-    .hamburger_menu {
-        display: flex !important;
-    }
-
+  
     /* Itinatago ang nakasanayang magkahiwalay na kaliwa at kanang desktop links */
     .nav_group.left, 
     .nav_group.right {
@@ -3258,15 +3241,164 @@ body {
     .mobile_nav_link.active {
         background-color: #FF4500 !important; /* Corporate Orange highlight kapag napili */
     }
+}
 
-    /* HAMBURGER ANIMATION EFFECT (Magiging "X" kapag nakabukas) */
-    .hamburger_menu.open_icon span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg) !important;
+/* =========================================================
+   MOBILE RESPONSIVE FIX
+   ========================================================= */
+@media screen and (max-width: 768px) {
+
+    body{
+        padding-top: 80px !important;
+        overflow-x: hidden;
     }
-    .hamburger_menu.open_icon span:nth-child(2) {
-        opacity: 0 !important;
+
+    /* ================= NAVIGATION ================= */
+
+    .nav_container{
+        justify-content: space-between;
+        padding: 0 15px;
     }
-    .hamburger_menu.open_icon span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg) !important;
+
+    .nav_group{
+        display: none;
     }
+
+    .nav_logo img{
+        height: 60px;
+        margin: 0;
+    } 
+
+    .mobile_drawer{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        transition: 0.3s ease;
+        z-index: 1500;
+    }
+
+    .mobile_drawer.show{
+        left: 0;
+    }
+
+    .mobile_nav_link{
+        padding: 15px 0;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* ================= SLIDER ================= */
+
+    .slider_container{
+        height: auto;
+    }
+
+    .slide img,
+    .mySlides img{
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .slide_text{
+        width: 90%;
+        left: 5%;
+        padding: 20px;
+    }
+
+    .slide_text h2{
+        font-size: 1.5rem;
+    }
+
+    .slide_text p{
+        font-size: 0.9rem;
+    }
+
+    .slide_btn{
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    /* ================= TITLES ================= */
+
+    .main_title,
+    .section_title,
+    .products-title{
+        font-size: 2rem !important;
+    }
+
+    .preview_text,
+    .inspiring_text{
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* ================= HERITAGE ================= */
+
+    .heritage_grid{
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .heritage_img{
+        height: auto;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .product-header{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .product-grid{
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .product-card{
+        min-width: 220px;
+    }
+
+    .image-wrapper{
+        height: 220px;
+    }
+
+    .product-info h3{
+        font-size: 1rem;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about_container{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about_content h2{
+        font-size: 2rem;
+    }
+
+    /* ================= EVOLUTION ================= */
+
+    .evolution_section .container,
+    .lifestyle_section .container{
+        flex-direction: column;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer_container{
+        flex-direction: column;
+        text-align: center;
+    }
+
 }
