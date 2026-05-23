@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennium Consumer Corporation - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+    <nav class="nav_container">
+        <!-- Kaliwang grupo ng buttons -->
+        <div class="nav_group left">
+            <a href="index.html" class="nav_link active">HOME</a>
+            <a href="about.html" class="nav_link">ABOUT US</a>
+            <a href="products.html" class="nav_link">PRODUCT</a>
+        </div>
+
+        <!-- Logo sa gitna -->
+        <div class="nav_logo">
+            <a href="index.html">
+            <img src="logo.png" alt="Millennium Logo">
+            </a>
+        </div>
+
+        <!-- Kanang grupo ng buttons -->
+        <div class="nav_group right">
+            <a href="reseller.html" class="nav_link">RESELLER</a>
+            <a href="partnerstores.html" class="nav_link">PARTNER STORES</a>
+            <a href="contact.html" class="nav_link">CONTACT</a>
+        </div>
+    </nav>
+</header>
+
+    <!-- Home Section -->
+    <section class="home">
+        <div class="slider_container">
+            <!-- Slide 1 -->
+            <div class="mySlides fade">
+                <img src="slider/slider3-min.jpg" style="width: 100%;" alt="Expo Peanuts">
+                <div class="slide_text">
+                    <h2>Producing <span style="color: #FF0000;">Quality</span> Snacks</h2>
+                    <p>Made from the finest imported nuts and processed with care.</p>
+                    <a href="products.html" class="slide_btn">View Products</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="mySlides fade">
+                <img src="slider/slider2.jpg" alt="Sunshine Peas">
+                <div class="slide_text">
+                    <h2>Your Daily <span style="color: #FF0000;">Crunch </span> Partner</h2>
+                    <p>Discover the perfect blend of taste and quality with our Sunshine Crunchy Green Peas and Expo Peanuts.</p>
+                    <a href="products.html" class="slide_btn">Explore Our Products</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="mySlides fade">
+                <img src="slider/slider1-min.jpg" style="width: 100%;" alt="Sunshine Peas">
+                <div class="slide_text">
+                    <h2>Pure <span style="color: #d4af37;">Golden</span> Goodness</h2>
+                    <p>Sourced from the finest farms, our Sunshine Crunchy Yellow Peas are roasted to perfection for that ultimate crunch.</p>
+                    <a href="products.html" class="slide_btn">Explore More</a>
+                </div>
+                </div>
+
+            <!-- Slide 4 -->
+            <div class="mySlides fade">
+                <img src="slider/slider4.png" style="width: 100%;" alt="Sunshine Peas">
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="mySlides fade">
+                <img src="slider/slider5.jpg" style="width: 100%;" alt="Sunshine Peas">
+                </div>
+            </div>
+
+            <!-- Slide 6: Special Center Design for Reseller -->
+            <div class="mySlides fade">
+            <!-- Siguraduhing walang extra spaces o tags sa paligid ng img -->
+                <img src="slider/slider6.png" alt="Become Our Partner">
+    
+                <div class="slide_text_center">
+                <h2>Become Our <span style="color: #ffcc00;">Partner</span></h2>
+                <p>Join our growing network of distributors and resellers nationwide.</p>
+                <a href="reseller.html" class="slide_btn">Become a Reseller</a>
+                <br><br>
+        <p class="sub_text">We are looking for distributors!</p>
+    </div>
+</div>
+
+            <!-- Navigation Dots -->
+            <div class="dots_container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+                
+    </section>
+
+    <!-- ABOUT PREVIEW SECTION ON HOME -->
+<section class="about_preview">
+    <div class="container">
+        <div class="about_preview_content">
+            <!-- Stacked Header Style -->
+            <div class="stacked_header">
+                <span class="sub_title">OUR STORY</span>
+                <h2 class="main_title">About Us</h2>
+            </div>
+            
+            <p class="preview_text">
+                Established in <strong>2001</strong>, Millennium Consumer Corporation has been a pillar in the food distribution industry for over two decades. Driven by a mission to bring joy to every Filipino household, we deliver the taste of home and the tradition of quality bonding through every snack we provide.
+            </p>
+
+            <!-- Ito ang "Learn More" link na pupunta sa about.html -->
+            <a href="about.html" class="learn_more_btn">
+                Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- HISTORY PREVIEW SECTION ON HOME -->
+<section class="history_preview">
+    <div class="container">
+        <!-- Stacked Header Style para consistent -->
+        <div class="stacked_header">
+            <span class="sub_title">OUR LEGACY</span>
+            <h2 class="main_title">Product Heritage</h2>
+        </div>
+
+        <!-- Bagong Grid para sa colorful images -->
+        <div class="heritage_grid">
+            <div class="heritage_item">
+                <img src="img/expo-group.jpg" alt="Expo Peanuts Collection" class="heritage_img">
+            </div>
+            <div class="heritage_item">
+                <img src="img/sunshine-group.png" alt="Sunshine Green Peas Collection" class="heritage_img">
+            </div>
+        </div>
+
+        <div class="heritage_content_bottom">
+            <p class="preview_text">
+                For over two decades, <strong>Expo Peanuts</strong> and <strong>Sunshine Green Peas</strong> have been more than just snacks—they are a tradition of quality and flavor in every Filipino home. From our greaseless roasting process to our 100% fulfillment commitment, discover how we've built a legacy of trust.
+            </p>
+
+            <div class="heritage_action" style="text-align: center; padding: 20px 0;">
+                <a href="about.html#product-history" class="slide_btn">
+                    DISCOVER OUR HERITAGE <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+            <!-- EVOLUTION SECTION -->
+<section class="evolution_section" style="padding: 60px 0; background-color: #fff;">
+    <div class="container" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+        <div class="evolution_image" style="flex: 1; min-width: 300px;">
+            <img src="img/noon-ngayon.jpg" alt="Sunshine Evolution" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div class="evolution_text" style="flex: 1; min-width: 300px;">
+            <span style="color: #f9f9f9; font-weight: 800; letter-spacing: 2px;">BRAND HERITAGE</span>
+            <h2 style="font-size: 2.5rem; margin: 10px 0;">Our <span style="color: #f9f9f9;">Evolution</span></h2>
+            <p style="color: #555; line-height: 1.6;">Since 2001, we have grown alongside you. From the nostalgic days of the past to the fast-paced digital era of today, our commitment to quality remains unchanged. Sunshine Crunchy Green Peas continues to bring that classic taste to a whole new generation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- LIFESTYLE SECTION -->
+<section class="lifestyle_section" style="padding: 60px 0; background-color: #f9f9f9;">
+    <div class="container" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap-reverse;">
+        <div class="lifestyle_text" style="flex: 1; min-width: 300px;">
+            <span style="color: #f9f9f9; font-weight: 800; letter-spacing: 2px;">LIFESTYLE</span>
+            <h2 style="font-size: 2.5rem; margin: 10px 0;">Your Partner in <span style="color: #f9f9f9;">Every Moment</span></h2>
+            <p style="color: #555; line-height: 1.6;">Expo Peanuts is more than just a snack—it’s a part of your daily journey. Whether you're at work, creating art, or enjoying a break, we are proud to be your constant companion in every milestone.</p>
+        </div>
+        <div class="lifestyle_image" style="flex: 1; min-width: 300px;">
+            <img src="img/kasabay-sa-life.jpg" alt="Expo Lifestyle" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+</section>
+
+<section class="products-section">
+    <div class="container">
+        <!-- Header with navigation arrows -->
+        <div class="product-header">
+    <div class="title-group">
+        <p class="our-delicious">OUR DELICIOUS</p>
+        <h2 class="products-title">Products</h2>
+    </div>
+    
+    <div class="nav-arrows">
+        <button id="prevBtn" class="arrow-btn">←</button>
+        <button id="nextBtn" class="arrow-btn">→</button>
+    </div>
+</div>
+
+            <div class="product-grid" id="productGrid">
+            <!-- Example Card: Expo Spicy -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/SS100G.png" alt="Expo Spicy">
+                </div>
+                <div class="product-info">
+                    <h3>Sunshine Green Peas</h3>
+                    <p class="sizes">100 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/PMIX100G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Sunshine Premium Mix</h3>
+                    <p class="sizes"> 100 grams</p>
+                </div>
+            </div>
+            
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/GP100.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Sunshine Golden Peas</h3>
+                    <p class="sizes"> 100 grams</p>
+                </div>
+            </div>
+    
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/TRIO.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Sunshine Trio Box</h3>
+                    <p class="sizes"> 6 in 1 Gift Box</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/SS50G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Sunshine Crunchy Grean Peas</h3>
+                    <p class="sizes"> 50 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/CP50G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Expo Coated Peanuts</h3>
+                    <p class="sizes"> 50 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/GL50G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Expo Greaseless Peanuts</h3>
+                    <p class="sizes"> 50 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/GLSH50G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Expo Hot & Spicy Greaseless Peanuts</h3>
+                    <p class="sizes"> 50 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/SS10G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Sunshine Crunchy Green Peas</h3>
+                    <p class="sizes"> 10 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/YP10G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Sunshine Crunchy Yellow Peas</h3>
+                    <p class="sizes"> 10 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/CP8G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Expo Coated Peanuts</h3>
+                    <p class="sizes"> 8 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/GL7G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Expo Greaseless Peanuts</h3>
+                    <p class="sizes"> 7 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/GLSH7G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Expo Hot & Spicy Greaseless Peanuts</h3>
+                    <p class="sizes"> 7 grams</p>
+                </div>
+            </div>
+
+            <!-- Example Card: Sunshine Green Peas -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="products/JAR250G.png" alt="Sunshine Green Peas">
+                </div>
+                <div class="product-info">
+                    <h3>Sunshine Premium Mix </h3>
+                    <p class="sizes"> 250 grams</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="store_locator_banner">
+    <div class="banner_content">
+        <h2>Find your nearest retail store</h2>
+        <!-- Link to your Partner Stores page -->
+        <a href="partnerstores.html" class="slide_btn">LOCATIONS</a>
+    </div>
+</section>
+
+    <footer class="footer_section">
+    <div class="footer_container">
+        <!-- Column 1: Logo -->
+        <div class="footer_column logo_col">
+            <img src="logo.png" alt="Millennium Logo" class="footer_logo">
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer_column">
+            <h4>Quick Links</h4>
+            <div class="links_grid">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                </ul>
+                <ul>
+                    <li><a href="partnerstores.html">Store Location</a></li>
+                    <li><a href="reseller.html">Reseller</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Column 3: Address -->
+        <div class="footer_column">
+            <h4>Address</h4>
+            <p>3308 Robinsons Equitable Tower ADB Ave,<br>
+               Metro Manila, Philippines 1440</p>
+        </div>
+
+        <!-- Column 4: Contacts -->
+        <div class="footer_column">
+            <h4>Contacts</h4>
+            <p>Phone: 8 4555-3644</p>
+            <p>Fax: +63 (2) 8765-4321</p>
+            <p>Email: sales@millenniumconsumer.com.ph</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer_content">
+            <p>&copy; 2026 Millennium Consumer Corporation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
