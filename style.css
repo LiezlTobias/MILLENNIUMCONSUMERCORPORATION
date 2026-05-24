@@ -277,18 +277,12 @@ section.about h2.section_title {
 }
 
 .about_header .main_title {
-    font-size: 42px;
-    font-weight: 900;
-    color: #000000; 
+    font-family: 'Montserrat', sans-serif; 
+    text-align: center;
+    font-size: 45px;
+    font-weight: 1000;
+    color: #2E7D32; 
     text-transform: uppercase;
-}
-
-.intro_text {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 18px;
-    color: #333;
-    line-height: 1.7;
 }
 
 /* Grid System */
@@ -516,15 +510,18 @@ body {
 .heritage_item {
     flex: 1;
     max-width: 500px;
-    overflow: hidden;
-    border-radius: 15px; /* Rounded corners para modern */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Subtle shadow para lumutang */
+    height: auto !important;     
+    overflow: hidden;         
+    border-radius: 15px;      
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
 }
 
+/* Eto lang dapat ang para sa heritage image */
 .heritage_img {
-    width: 100%;
-    height: 300px; /* Adjust base sa gusto mong laki */
-    object-fit: cover;
+    width: 100% !important;
+    height: auto !important;        /* Hayaan ang browser mag-adjust sa tamang lapad */
+    object-fit: contain !important; /* Ipakita ang buong larawan nang walang bawas */
+    display: block;
     transition: transform 0.5s ease;
 }
 
@@ -538,10 +535,12 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
-.about_image img, .heritage_img {
-    width: 100% !important;   /* Pinupwersang sumunod sa lapad ng screen ng phone */
-    height: 350px !important; /* Default height para sa desktop */
-    object-fit: cover !important; /* Tinitiyak na hindi madi-distort o mai-stretch ang mukha ng pic */
+
+/* Inalis na natin si .heritage_img dito para hindi na siya masira */
+.about_image img {
+    width: 100% !important;   
+    height: 350px !important; /* Safe na iwanan ito para sa about section mo */
+    object-fit: cover !important; 
     display: block;
 }
 
@@ -702,6 +701,7 @@ button[data-filter="all"].active {
 }
 
 .products-title {
+    color: #2E7D32;
     font-size: 48px;
     margin: 0;
     font-weight: 800;
@@ -867,7 +867,7 @@ button[data-filter="all"].active {
 .section_title {
     font-size: 80px !important; /* Parehong laki sa About Us */
     font-weight: 800;          /* Extra bold para lumitaw talaga */
-    color: #ffffff;
+    color: #2E7D32;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -939,7 +939,7 @@ button[data-filter="all"].active {
 .stacked_header .main_title {
     font-size: 50px !important;
     font-weight: 800;
-    font-family: 'Montserrat', sans-serif; /* Matching your slider */
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* --- HISTORY PREVIEW ON HOME --- */
@@ -1133,10 +1133,11 @@ button[data-filter="all"].active {
 .main_title {
     font-size: 60px !important; /* Ginawang extra big gaya ng request mo */
     font-weight: 800;
-    color: #000;
+    color: #2E7D32;
     line-height: 1.1;
     margin: 0;
-    font-family: 'Montserrat', sans-serif; /* Same as Contact Us */
+    font-family: 'Montserrat', sans-serif;
+    
 }
 
 .about_preview {
@@ -2154,7 +2155,7 @@ body {
 }
 
 .contact_header h1 {
-    color: #ffffff;
+    color: #2E7D32;
     font-size: 5.5rem;
     margin: 10px 0;
     font-weight: 900;
@@ -2319,7 +2320,7 @@ body {
 
 .partner_hero h1 {
     font-size: 5.6rem;
-    color: #ffffff; /* Darker brownish color similar to ref */
+    color: #2E7D32; /* Darker brownish color similar to ref */
     font-weight: bold;
 }
 
@@ -2447,7 +2448,8 @@ body {
 }
 
 .banner_content h2 {
-    font-size: 2rem;
+    font-size: 4rem;
+    color: #2E7D32;
     margin-bottom: 30px;
     font-weight: 600;
     text-transform: none; /* Keeps it modern like the image */
@@ -3164,4 +3166,60 @@ body {
 }
 .product_container p {
     text-align: center;
+    }
+
+    /* Custom Success Modal Box */
+.custom-modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    align-items: center;
+    justify-content: center;
 }
+
+.custom-modal-content {
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 15px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.custom-modal-content h3 {
+    color: #28a745; 
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-family: sans-serif;
+}
+
+.custom-modal-content p {
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-family: sans-serif;
+}
+
+.custom-modal-content button {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.custom-modal-content button:hover {
+    background-color: #FF0000;
+}
+

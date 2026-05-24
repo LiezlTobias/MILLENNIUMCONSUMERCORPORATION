@@ -234,16 +234,14 @@
 
 <script src="script.js"></script>
 
-<div id="successModal" class="modal">
-    <div class="modal_content success_modal_content">
-        <div class="success_icon">
-            <i class="uil uil-check-circle"></i>
-        </div>
-        <h2>Submission Successful!</h2>
+<div id="customAlertModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <h3>Submission Successful!</h3>
         <p>Thank you for your interest in becoming a partner. Our team will review your application and contact you soon.</p>
-        <button id="closeSuccessBtn" class="submit_btn_blue">BACK TO HOME</button>
+        <button id="closeModalBtn" onclick="document.getElementById('customAlertModal').style.display='none'">OK</button>
     </div>
 </div>
+
 
 </body>
 </html>

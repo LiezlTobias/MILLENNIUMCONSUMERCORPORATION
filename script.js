@@ -115,20 +115,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log("Saving to Firestore...", formData);
 
-            db.collection("resellers").add(formData)
-                .then((docRef) => {
-                    console.log("Document written with ID:", docRef.id);
-                    alert("Thank you! Your intent has been submitted successfully.");
-                    resellerForm.reset();
-                    if (modal) modal.style.display = "none";
-                    document.body.style.overflow = "auto";
-                })
-                .catch((error) => {
-                    console.error("Error adding document:", error);
-                    alert("Error submitting form. Please check your connection or Firestore rules.");
-                });
-        });
-    }
+        db.collection("resellers").add(formData)
+            .then((docRef) => {
+                console.log("Document written with ID:", docRef.id);
+                
+                // I-reset ang form at isara ang form modal kung meron
+                resellerForm.reset();
+                if (modal) modal.style.display = "none";
+                document.body.style.overflow = "auto";
+
+                // TAWAGIN ANG CUSTOM MODAL (Dapat Eto lang ang nandito, WALANG ALERT!)
+                const customAlert = document.getElementById("customAlertModal");
+                if (customAlert) {
+                    customAlert.style.display = "flex";
+                }
+            })
+            .catch((error) => {
+                console.error("Error adding document:", error);
+                alert("Error submitting form. Please check your connection or Firestore rules.");
+            });
+    });
+}
 
     // --- MOBILE MENU LOGIC ---
     const navMenu = document.getElementById('nav-menu'),
@@ -161,13 +168,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- CONTACT FORM ALERT ---
+    // --- CONTACT FORM ALERT (CUSTOM MODAL VERSION) ---
     const contactForm = document.getElementById("contactForm");
     if (contactForm) {
         contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            alert("Salamat! Natanggap namin ang iyong mensahe.");
+            
+            // 1. Linisin at i-reset ang mga input box ng form
             contactForm.reset();
+
+            // 2. ITO ANG IPALIT SA ALERT: Ipakita ang ating custom success modal
+            const contactModal = document.getElementById("contactSuccessModal");
+            if (contactModal) {
+                contactModal.style.display = "flex";
+            }
         });
     }
 });
@@ -359,12 +373,13 @@ const db = firebase.firestore();
 
 // 3. Form Logic
 const resellerForm = document.getElementById('resellerForm');
+const modal = document.getElementById('yourFormModalId'); // Palitan mo ng tamang ID ng modal ng mismong FORM kung may hiwalay ka pa doon
 
 if (resellerForm) {
     resellerForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        console.log("Submitting..."); // Para makita mo kung gumagana ang click
+        console.log("Saving to Firestore...", resellerForm);
 
         const formData = {
             email: document.getElementById('email').value,
@@ -376,14 +391,26 @@ if (resellerForm) {
         };
 
         db.collection("resellers").add(formData)
-        .then(() => {
-            alert("Success! Form submitted to Firebase.");
-            resellerForm.reset();
-        })
-        .catch((error) => {
-            console.error("Firebase Error: ", error);
-            alert("Error: " + error.message);
-        });
+            .then((docRef) => {
+                console.log("Document written with ID:", docRef.id);
+                
+                // 1. I-reset ang form fields
+                resellerForm.reset();
+                
+                // 2. Isara ang form input modal (kung meron)
+                if (modal) modal.style.display = "none";
+                document.body.style.overflow = "auto";
+
+                // 3. DIRETSO CUSTOM SUCCESS MESSAGE (Wala nang browser alert)
+                const customAlert = document.getElementById("customAlertModal");
+                if (customAlert) {
+                    customAlert.style.display = "flex";
+                }
+            })
+            .catch((error) => {
+                console.error("Error adding document:", error);
+                alert("Error submitting form. Please check your connection or Firestore rules.");
+            });
     });
 }
 
@@ -398,3 +425,24 @@ if(hamburger && mobileDrawer){
     });
 
 }
+
+// Kunin ang button element mula sa HTML
+const backToTopBtn = document.getElementById("backToTop");
+
+// Makikiramdam sa pag-scroll ng user
+window.onscroll = function() {
+    // Kung lumampas na ng 300px ang scroll pababa, lalabas ang button. Kung hindi, tago ulit.
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "flex";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+};
+
+// Kapag clinick ang button, aakyat sa pinakataas ng website
+backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" /* Smooth transition papuntang itaas */
+    });
+});
