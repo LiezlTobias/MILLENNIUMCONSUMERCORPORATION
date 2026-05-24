@@ -2,22 +2,23 @@
    1. GLOBAL STYLES & FONTS
    ============================================================ */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@700;800;900&display=swap");
 
 * {
     margin: 0; 
     padding: 0; 
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
 }
 
-/* I-apply ang background sa buong website */
 body {
-    /* Mula sa matingkad na orange sa taas hanggang sa mas dilaw sa baba */
     background: linear-gradient(180deg, #FF4500 0%, #FFB040 50%, #FFD700 100%);
-    background-attachment: fixed; /* Para hindi gumagalaw ang kulay pag nag-scroll */
-    margin: 0;
+    background-attachment: fixed;
     min-height: 100vh;
-    color: #111111; /* Ginawang dark/black ang default na kulay ng lahat ng teksto */
+    color: #111111;
+    
+    /* Lahat ng normal na text/talata ay gagamit ng Inter */
+    font-family: "Inter", sans-serif; 
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Dahil madilim ang background, siguraduhin na ang ibang sections ay readable */
@@ -537,6 +538,12 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+.about_image img, .heritage_img {
+    width: 100% !important;   /* Pinupwersang sumunod sa lapad ng screen ng phone */
+    height: 350px !important; /* Default height para sa desktop */
+    object-fit: cover !important; /* Tinitiyak na hindi madi-distort o mai-stretch ang mukha ng pic */
+    display: block;
+}
 
 /* --- HERO SECTION (HOME) --- */
 .home {
@@ -786,8 +793,6 @@ button[data-filter="all"].active {
     padding: 10px;
     transition: transform 0.3s ease;
 }
-/* Image Wrapper - Dito natin papalakihin ang space */
-/* Image Wrapper - Inalis ang padding at background para 'popping' ang image */
 .image-wrapper {
     width: 100%;
     height: 380px; /* Mas mataas para sa vertical bags */
@@ -862,7 +867,7 @@ button[data-filter="all"].active {
 .section_title {
     font-size: 80px !important; /* Parehong laki sa About Us */
     font-weight: 800;          /* Extra bold para lumitaw talaga */
-    color: #000000;
+    color: #ffffff;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1049,7 +1054,7 @@ button[data-filter="all"].active {
 
 .about_content p {
     margin-bottom: 20px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #000000;
 }
 
@@ -1150,7 +1155,7 @@ button[data-filter="all"].active {
     font-size: 40px !important;
     font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
@@ -3031,20 +3036,17 @@ body {
 
 .about-us p, .about-us li {
     color: #f3f4f6 !important; /* Off-white para hindi masakit sa mata basahin */
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
-/* ============================================================
-   LESLIE'S STYLE - SNACKS INTRODUCTION HEADER
-   ============================================================ */
 .section_title_container {
     width: 100%;
-    max-width: 1100px; /* Pantay sa sukat ng mga content boxes mo sa baba */
-    margin: 70px auto 30px auto; /* Malaking gap sa taas mula sa slider, sakto lang sa baba */
-    padding: 0 40px; /* Indention sa kaliwa para hindi nakadikit sa dulo ng screen */
+    max-width: 1100px; 
+    margin: 70px auto 30px auto; 
+    padding: 0 40px;  
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Pinupuwersa sa KALIWA ang text at linya */
+    align-items: flex-start; 
     text-align: left;
 }
 
@@ -3137,7 +3139,7 @@ body {
 /* Responsive adjustment para sa maliliit na phone screen */
 @media (max-width: 480px) {
     .product_marketplace_links {
-        flex-direction: column; /* Magiging patong sila kapag sobrang sikip na ng screen ng phone */
+        flex-direction: column; 
         gap: 8px;
     }
 }
@@ -3145,7 +3147,6 @@ body {
    BRANDING COLORS FOR SHOPEE & LAZADA BUTTONS
    ============================================================ */
 
-/* Inaayos ang pangkalahatang porma ng mga buttons */
 .shop_btn {
     display: inline-flex !important;
     align-items: center !important;
