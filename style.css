@@ -120,8 +120,8 @@ header a:hover {
 }
 
 .nav_logo img {
-    height: 90px;
-    width: auto;
+    height: 70px !important; /* Mula sa dating malaki, ginawa nating 65px para katamtaman at malinis */
+    width: auto !important;
     transition: 0.3s ease;
 }
 
@@ -473,8 +473,8 @@ section.about h2.section_title {
 
 /* Logo sa gitna */
 .nav_logo img {
-    height: 90px; /* I-adjust depende sa laki ng logo mo */
-    width: auto;
+    height: 65px !important; /* Mula sa dating malaki, ginawa nating 65px para katamtaman at malinis */
+    width: auto !important;
     display:block;
     margin: 0 120px; /* Space sa pagitan ng logo at links */
     transition: 0.3s ease;
@@ -2646,8 +2646,8 @@ nav,
 
 .nav_logo {
     position: absolute;
-    left: 50%;
-    top: 0;
+    left: 50% !important; /* Dadalhin ang kaliwang kanto sa gitna */
+    top: 25% !important;
     transform: translateX(-50%);
     z-index: 1002;
     background-color: #ffffff !important;
@@ -2661,7 +2661,7 @@ nav,
 }
 
 .nav_logo img {
-    height: 110px !important;
+    height: 70px !important;
     width: auto;
     margin: 0 !important;
     display: block;
@@ -3223,3 +3223,106 @@ body {
     background-color: #FF0000;
 }
 
+/* ============================================================
+   RESPONSIVE FIX: EXCLUSIVELY FOR TABLET AND SMALL SCREENS
+   (Hinding-hindi nito pakikialaman o babaguhin ang Desktop View)
+   ============================================================ */
+
+/* 1. Kapag ang screen ay nagsisimulang sumikip (1100px pababa) */
+@media (max-width: 1100px) {
+    .nav_container {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+    }
+
+    /* Sinisigurong LITAW na LITAW pa rin ang mga links sa isang linya */
+    .nav_group {
+        display: flex !important; /* Pinupuwersang manatiling nakikita */
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: clamp(8px, 1.5vw, 15px) !important; /* Automatic na nagreregulate ng agwat */
+    }
+
+    .nav_link {
+        white-space: nowrap !important;
+        font-size: clamp(0.75rem, 1.2vw, 0.85rem) !important; /* Automatic na liliit ang font para kasya */
+        padding: 5px 6px !important;
+    }
+
+    .nav_logo img {
+        height: clamp(40px, 4vw, 55px) !important; /* Awtomatikong liliit ang logo para magbigay-daan */
+        width: auto !important;
+    }
+}
+
+/* 2. ANG TOTOONG CELLPHONE BREAKPOINT (Dito lang sila magtatago para sa Hamburger) */
+@media (max-width: 768px) {
+    /* Lalabas lang ang tatlong guhit kapag pang-smartphone na ang sukat */
+    .hamburger_menu {
+        display: flex !important;
+    }
+
+    /* DITO PA LANG SILA MAWAWALA sa header bar para lumipat sa sliding drawer */
+    .nav_group.left, 
+    .nav_group.right {
+        display: none !important; 
+    }
+
+    .nav_container {
+        padding: 0 20px !important;
+    }
+
+    .nav_logo {
+        position: static !important;
+        transform: none !important;
+        margin: 0 auto !important; /* Sinesentro ang logo sa mobile preview screen */
+    }
+    
+    .nav_logo img {
+        height: 45px !important;
+    }
+}
+/* ============================================================
+   FINAL SYSTEM: TRIGGER HAMBURGER AT TABLET VIEW (1100px)
+   ============================================================ */
+
+/* Kapag ang screen ay 1100px pababa (Tablets, Laptops, and Phones) */
+@media (max-width: 1100px) {
+    
+    /* 1. Lalabas na ang tatlong guhit ng hamburger button */
+    .hamburger_menu {
+        display: flex !important;
+        cursor: pointer;
+    }
+
+    /* 2. ITATAGO NA ANG DESKTOP LINKS (Para hindi na mag-overlap o sumasabog) */
+    .nav_group,
+    .nav_group.left, 
+    .nav_group.right {
+        display: none !important; 
+    }
+
+    /* 3. Iniaayos ang container para sa mobile style setup */
+    .nav_container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 20px !important;
+        height: 70px !important; /* Slimmer header bar para sa mobile devices */
+    }
+
+    /* 4. Sinesentro ang logo nang malinis sa gitna ng bar */
+    .nav_logo {
+        position: static !important;
+        transform: none !important;
+        margin: 0 auto !important; /* Magic center placement */
+    }
+    
+    .nav_logo img {
+        height: 48px !important; /* Katamtamang sukat ng logo sa mobile/tablet strip */
+        width: auto !important;
+    }
+}
